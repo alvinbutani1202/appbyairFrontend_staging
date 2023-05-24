@@ -49,9 +49,10 @@ const SectionDetail = ({ sectionItems, sectionTitle }: Props) => {
             return (
               <a
                 href={`itms-services://?action=download-manifest&url=${info.downloadURL}`}
+                key={index}
               >
                 <div
-                  key={index}
+                  
                   className={`py-2 pr-4 flex flex-row items-center justify-between text-base  ${
                     info.isCursorPointer && "cursor-pointer"
                   } ${
@@ -80,9 +81,8 @@ const SectionDetail = ({ sectionItems, sectionTitle }: Props) => {
             );
           } else if (info.isQRCode) {
             return (
-              <div>
+              <div key={index}>
                 <div
-                  key={index}
                   onClick={handleIsShowQR}
                   className={`py-2 pr-4 flex flex-row items-center justify-between text-base ${
                     info.isCursorPointer && "cursor-pointer"
@@ -125,9 +125,8 @@ const SectionDetail = ({ sectionItems, sectionTitle }: Props) => {
             );
           } else if (info.isDevices) {
             return (
-              <div>
+              <div key={index}>
                 <div
-                  key={index}
                   onClick={handleIsShowDevices}
                   className={`py-2 pr-4 flex flex-row items-center justify-between text-base ${
                     info.isCursorPointer && "cursor-pointer"
@@ -177,9 +176,8 @@ const SectionDetail = ({ sectionItems, sectionTitle }: Props) => {
             );
           } else if (info.isHelp) {
             return (
-              <Link href="/help">
+              <Link href="/help" key={index}>
                 <div
-                  key={index}
                   className={`py-2 pr-4 flex flex-row items-center justify-between text-base  ${
                     info.isCursorPointer && "cursor-pointer"
                   } ${

@@ -28,14 +28,14 @@ const Help = ({ applicationName }: Props) => {
         <HelpDetail
           sectionTitle="iOS install popup did not appear"
           sectionItems={{
-            key: "",
+            key: "1",
             value: `If the iOS popup "app.appbyair.com would like to install" did not appear, check that you don't already have the same app installed from the AppStore. \n If an app with the same bundle identifier is already installed on the device from the AppStore, nothing will happen. \n Delete the app installed from the AppStore to be able to install this one.`,
           }}
         />
         <HelpDetail
           sectionTitle="Developer Mode"
           sectionItems={{
-            key: "",
+            key: "2",
             value: `On iOS 16, Apple added Developer Mode, a new level of security around development apps installed from Xcode or third-party apps.
           To be able to run an ad-hoc or development app on a device, we need to enable the Developer Mode.
           To enable Developer Mode go in the "Settings app" > "Privacy and Security" > Enable "Developer Mode" (at the bottom of the list) > "Restart the device"
@@ -45,7 +45,7 @@ const Help = ({ applicationName }: Props) => {
         <HelpDetail
           sectionTitle="Untrusted Enterprise Developer"
           sectionItems={{
-            key: "",
+            key: "3",
             value: `Starting from iOS 9, the developer has to be trusted by the device, otherwise a popup will appear and prevent using the app.
           On iOS 9.0/9.1, go to Settings > General > Profiles > tap on the developer's profile, and tap on Trust.
           On iOS 9.2+, go to Settings > General > Device Management > tap on the developer's profile, and tap on Trust.`,
@@ -54,7 +54,7 @@ const Help = ({ applicationName }: Props) => {
         <HelpDetail
           sectionTitle="Otherwise…"
           sectionItems={{
-            key: "",
+            key: "4",
             value: `Contact your app developer, so they can double-check the app and provide you with support.`,
           }}
         />

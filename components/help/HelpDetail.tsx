@@ -14,7 +14,7 @@ const HelpDetail = ({ sectionItems, sectionTitle }: Props) => {
           className={`py-2 pr-4 flex flex-col items-start justify-between text-sm`}
         >
           {sectionItems.value.split("\n").map((line, index) => (
-            <div>
+            <div key={index}>
               <p>{line}</p>
               {sectionItems.value.split("\n").length - 1 != index && <br />}
             </div>
