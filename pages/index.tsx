@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <header className="flex-none h-20 sticky w-full bg-white  border-b border-gray-300 ">
           <section className="flex justify-between items-center gap-x-2">
             <img
-              src="/AppLogo.svg"
+              src="/static/AppLogo.svg"
               alt=""
               className="h-20 w-40
             "
@@ -38,14 +38,14 @@ const Home: NextPage = () => {
             <div className="flex flex-col gap-4">
               <div className="flex gap-4">
                 <div className="h-40 w-80 drop-shadow-sm bg-slate-50 rounded-lg p-4 ">
-                  <img src="/upload.svg" alt="" className="w-10 h-10" />
+                  <img src="/static/upload.svg" alt="" className="w-10 h-10" />
                   <h1 className="font-bold text-lg pt-4">Upload</h1>
                   <h6 className="text-base text-left text-gray-800 pt-1">
                     Select or Drage and Drop your ipa file for iOS{" "}
                   </h6>
                 </div>
                 <div className="h-40 w-80 drop-shadow-sm bg-slate-50 rounded-lg p-4">
-                  <img src="/ic_Submit.svg" alt="" className="w-10 h-10" />
+                  <img src="/static/ic_Submit.svg" alt="" className="w-10 h-10" />
                   <h1 className="font-bold text-lg pt-4">Submit</h1>
                   <h6 className="text-base text-left text-gray-800 pt-1">
                     Click on upload to get the installation link.{" "}
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
               </div>
               <div className="flex gap-4">
                 <div className="h-40 w-80 drop-shadow-sm bg-slate-50 rounded-lg p-4">
-                  <img src="/share.svg" alt="" className="w-10 h-10" />
+                  <img src="/static/share.svg" alt="" className="w-10 h-10" />
                   <h1 className="font-bold text-lg pt-4">Share</h1>
                   <h6 className="text-base text-left text-gray-800 pt-1">
                     Send the link to your testers, clients, friends or even use
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                   </h6>
                 </div>
                 <div className="h-40 w-80 drop-shadow-sm bg-slate-50 rounded-lg p-4">
-                  <img src="/phone.svg" alt="" className="w-10 h-10" />
+                  <img src="/static/phone.svg" alt="" className="w-10 h-10" />
                   <h1 className="font-bold text-lg pt-4">Open</h1>
                   <h6 className="text-base text-left text-gray-800 pt-1">
                     Open the link in the browser on the device and click on
