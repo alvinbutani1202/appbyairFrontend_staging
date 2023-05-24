@@ -1,13 +1,16 @@
-version: "3"
-
+version: '3.8'
 services:
-  nodejs:
+  web:
     build:
-      context: .
-      dockerfile: Dockerfile
-    image: nextjs
+      context: ./
+      target: runner
+    volumes:
+      - .:/app
+    command: npm run dev
     ports:
-      - 5000:5000
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
     deploy:
       restart_policy:
         condition: on-failure
