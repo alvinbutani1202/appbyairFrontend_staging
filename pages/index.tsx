@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <header className="flex-none h-20 sticky w-full bg-white  border-b border-gray-300 ">
           <section className="flex justify-between items-center gap-x-2">
             <img
-              src={require('../public/static/AppLogo.svg')}
+              src="/static/AppLogo.svg"
               alt=""
               className="h-20 w-40
             "
