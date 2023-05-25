@@ -8,6 +8,8 @@ services:
     image: nextjs
     ports:
       - 5000:5000
+    environment:
+      NODE_ENV: production
     deploy:
       restart_policy:
         condition: on-failure

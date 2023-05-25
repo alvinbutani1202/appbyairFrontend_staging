@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import appLogo from '../public/static/AppLogo.svg'
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <header className="flex-none h-20 sticky w-full bg-white  border-b border-gray-300 ">
           <section className="flex justify-between items-center gap-x-2">
             <img
-              src="/static/AppLogo.svg"
+              src={require('../public/static/AppLogo.svg')}
               alt=""
               className="h-20 w-40
             "
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="flex flex-col justify-start">
-            <img src="/AppByAirUpload.png" alt="" />
+            <img src="/static/AppByAirUpload.png" alt="" />
           </div>
         </main>
         <footer className="h-12 p-8">
