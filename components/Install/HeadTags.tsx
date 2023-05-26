@@ -9,7 +9,7 @@ const HeadTags = ({ title }: Props) => {
   return (
     <Head>
       <title>{`${title}`}</title>
-      <link rel="icon" href="/favicon.svg" />
+      <link rel="icon" href="../favicon.svg" />
       <meta name="apple-mobile-web-app-capable" content="yes"></meta>
       <meta
         name="apple-mobile-web-app-status-bar-style"

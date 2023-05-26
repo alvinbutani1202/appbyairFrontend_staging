@@ -16,6 +16,8 @@ type Props = {
   response: BaseResponse<Application>;
 };
 
+
+
 const ApplicationDetail = ({ response }: Props) => {
   const router = useRouter();
   const { shortURL } = router.query;
@@ -26,8 +28,9 @@ const ApplicationDetail = ({ response }: Props) => {
       <main
         className={`${SFPro.variable} font-sans  bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
       >
-        <HeadTags title={"AppByAir"} />
-        <Navigation title={`${shortURL}`}></Navigation>
+        <div>{response.data.appInfo.name}</div>
+        {/* <HeadTags title={"AppByAir"} />
+        <Navigation title={`${shortURL}`}></Navigation> */}
       </main>
     );
   }
@@ -37,7 +40,8 @@ const ApplicationDetail = ({ response }: Props) => {
       className={`${SFPro.variable} font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
       <HeadTags title={`${response.data.appInfo.name} | AppByAir`} />
-      <Navigation title={`${application.appInfo.name}`}></Navigation>
+      <div>{response.data.appInfo.name}</div>
+      {/* <Navigation title={`${application.appInfo.name}`}></Navigation>
       <SectionDetail
         sectionTitle="App Overview"
         sectionItems={[
@@ -165,7 +169,7 @@ const ApplicationDetail = ({ response }: Props) => {
             value: ``,
           },
         ]}
-      ></SectionDetail>
+      ></SectionDetail> */}
     </main>
   );
 };
