@@ -5,7 +5,7 @@ type Props = {
   title: String;
 };
 
-const HeadTags = ({ title }: Props) => {
+const HeadTags:React.FC<Props> = ({ title }: Props) => {
   return (
     <Head>
       <title>{`${title}`}</title>

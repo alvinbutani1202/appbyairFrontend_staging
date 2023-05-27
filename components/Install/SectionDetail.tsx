@@ -7,7 +7,7 @@ type Props = {
   sectionItems: ApplicationDetailKeyValuePair[];
 };
 
-const SectionDetail = ({ sectionItems, sectionTitle }: Props) => {
+const SectionDetail:React.FC<Props> = ({ sectionItems, sectionTitle }: Props) => {
   const [isShowQR, setIsShowQR] = useState(false);
   const [isShowDevices, setIsShowDevices] = useState(false);
 
