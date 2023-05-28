@@ -1,7 +1,7 @@
 import React from "react";
 
 import Head from "next/head";
-import Navigation from "../components/Navigation";
+import NavigationBar from "../components/NavigationBar";
 import HelpDetail from "../components/HelpDetail";
 import { Metadata } from "next";
 
@@ -22,7 +22,7 @@ const Help = () => {
       <main
         className={` font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
       >
-        <Navigation title="Help"></Navigation>
+        <NavigationBar title="Help"></NavigationBar>
         <HelpDetail
           sectionTitle="iOS install popup did not appear"
           sectionItems={{

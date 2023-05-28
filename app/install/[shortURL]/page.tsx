@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import HeadTags from "@/app/components/HeadTags";
-import Navigation from "@/app/components/Navigation";
+import NavigationBar from "@/app/components/NavigationBar";
 import SectionDetail from "@/app/components/SectionDetail";
 import HelpDetail from "@/app/components/HelpDetail";
 import { Metadata } from "next";
@@ -42,7 +42,7 @@ const Page = async ({ params }: Params)  => {
         className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
       >
         <HeadTags title={"AppByAir"} />
-        <Navigation title={`${params.shortURL}`}></Navigation>
+        <NavigationBar title={`${params.shortURL}`}></NavigationBar>
         <HelpDetail
           sectionTitle=""
           sectionItems={{
@@ -60,7 +60,7 @@ const Page = async ({ params }: Params)  => {
     >
       
       <HeadTags title={`${response.data.appInfo.name} | AppByAir`} />
-      <Navigation title={`${application.appInfo.name}`}></Navigation>
+      <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
       <SectionDetail
         sectionTitle="App Overview"
         sectionItems={[
