@@ -19,7 +19,7 @@ type Props = {
 
 
 
-const ApplicationDetail = ({ response }: Props) => {
+const ApplicationDetail:React.FC<Props> = ({ response }: Props) => {
   const router = useRouter();
   const { shortURL } = router.query;
   const application = response.data;
