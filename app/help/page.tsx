@@ -1,20 +1,18 @@
 import React from "react";
 
-import localFont from "@next/font/local";
-import Navigation from "../components/Install/Navigation";
-import HelpDetail from "../components/help/HelpDetail";
 import Head from "next/head";
+import Navigation from "../components/Navigation";
+import HelpDetail from "../components/HelpDetail";
+import { Metadata } from "next";
 
-const SFPro = localFont({
-  src: "../public/font/SFPro-Regular.ttf",
-  variable: "--font-SFPro-Regular",
-});
 
-type Props = {
-  applicationName: string;
-};
+export const metadata:Metadata = {
+  title:"Help | AppByAir",
+  description: ""
+}
 
-const Help = ({ applicationName }: Props) => {
+
+const Help = () => {
   return (
     <>
       <Head>
@@ -22,7 +20,7 @@ const Help = ({ applicationName }: Props) => {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <main
-        className={`${SFPro.variable} font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
+        className={` font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
       >
         <Navigation title="Help"></Navigation>
         <HelpDetail

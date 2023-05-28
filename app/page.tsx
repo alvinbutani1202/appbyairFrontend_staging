@@ -1,6 +1,13 @@
-import type { NextPage } from "next";
+import type { Metadata, NextPage } from "next";
 import Head from "next/head";
 import appLogo from '../public/static/AppLogo.svg'
+
+export const metadata:Metadata = {
+  title:"AppByAir",
+  description: ""
+}
+
+
 
 const Home: NextPage = () => {
   return (

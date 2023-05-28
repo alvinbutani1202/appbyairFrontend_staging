@@ -1,43 +1,62 @@
-import { useRouter } from "next/router";
-import { GetServerSideProps } from "next";
 import React from "react";
 import moment from "moment";
+import HeadTags from "@/app/components/HeadTags";
+import Navigation from "@/app/components/Navigation";
+import SectionDetail from "@/app/components/SectionDetail";
+import HelpDetail from "@/app/components/HelpDetail";
+import { Metadata } from "next";
 
-import localFont from "@next/font/local";
-import HeadTags from "../../../components/Install/HeadTags";
-import Navigation from "../../../components/Install/Navigation";
-import SectionDetail from "../../../components/Install/SectionDetail";
 
-const SFPro = localFont({
-  src: "../../../public/font/SFPro-Regular.ttf",
-  variable: "--font-SFPro-Regular",
-});
-type Props = {
-  children:React.ReactNode;
-  response: BaseResponse<Application>;
+type Params = {
+  params:{
+    shortURL:String,
+  }
 };
 
 
+export async function generateMetadata({params}:Params):Promise<Metadata> {
+const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
+ const application = response.data;
 
-const ApplicationDetail:React.FC<Props> = ({ response }: Props) => {
-  const router = useRouter();
-  const { shortURL } = router.query;
-  const application = response.data;
+  if (!response.success){
+    return{
+    title: `Application | AppByAir`,
+  }
+  }
 
-  if (!response.success) {
+  return{
+    title: `${application.appInfo.name} | AppByAir`,
+  }
+}
+
+
+const Page = async ({ params }: Params)  => {
+ const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
+ const application = response.data;
+
+ if (!response.success) {
+  console.log(response.message);
+  
     return (
       <main
-        className={`${SFPro.variable} font-sans  bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
+        className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
       >
         <HeadTags title={"AppByAir"} />
-        <Navigation title={`${shortURL}`}></Navigation>
+        <Navigation title={`${params.shortURL}`}></Navigation>
+        <HelpDetail
+          sectionTitle=""
+          sectionItems={{
+            key: "1",
+            value: `${response.message}`,
+          }}
+        />
       </main>
     );
   }
 
   return (
     <main
-      className={`${SFPro.variable} font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
+      className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
       
       <HeadTags title={`${response.data.appInfo.name} | AppByAir`} />
@@ -152,7 +171,7 @@ const ApplicationDetail:React.FC<Props> = ({ response }: Props) => {
             isQRCode: true,
             isCursorPointer: true,
             QRCodeURL: `${application.url}`,
-            value: `${shortURL}`,
+            value: `${params.shortURL}`,
           },
         ]}
       ></SectionDetail>
@@ -172,20 +191,7 @@ const ApplicationDetail:React.FC<Props> = ({ response }: Props) => {
       ></SectionDetail>
     </main>
   );
+ 
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { shortURL } = context.query;
-  const jsonData = await fetch(
-    `http://143.244.136.168:4004/api/application/${shortURL}`
-  );
-  const data: BaseResponse<Application> = await jsonData.json();
-
-  return {
-    props: {
-      response: data,
-    },
-  };
-};
-
-export default ApplicationDetail;
+export default Page;
