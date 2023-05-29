@@ -1,6 +1,5 @@
 import React from "react";
 import moment from "moment";
-import HeadTags from "@/app/components/HeadTags";
 import NavigationBar from "@/app/components/NavigationBar";
 import SectionDetail from "@/app/components/SectionDetail";
 import HelpDetail from "@/app/components/HelpDetail";
@@ -41,7 +40,6 @@ export default async function Page({ params }: Params) {
       <main
         className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
       >
-        <HeadTags title={"AppByAir"} />
         <NavigationBar title={`${params.shortURL}`}></NavigationBar>
         <HelpDetail
           sectionTitle=""
@@ -58,8 +56,6 @@ export default async function Page({ params }: Params) {
     <main
       className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
-      
-      <HeadTags title={`${response.data.appInfo.name} | AppByAir`} />
       <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
       <SectionDetail
         sectionTitle="App Overview"
