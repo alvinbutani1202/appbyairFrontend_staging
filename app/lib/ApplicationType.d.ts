@@ -1,10 +1,7 @@
-type BaseResponse<T> = {
+type BaseResponse = {
   success: Boolean;
   message: String;
-  data: T;
-};
-
-type Application = {
+  data: {
   createdAt: String;
   downloadManifestURL: String;
   url: String;
@@ -32,6 +29,9 @@ type Application = {
     };
   };
 };
+}
+
+// type Application = ;
 
 type ApplicationDetailKeyValuePair = {
   id: String;

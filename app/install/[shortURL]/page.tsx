@@ -14,7 +14,7 @@ type Params = {
 
 
 export async function generateMetadata({params}:Params):Promise<Metadata> {
-const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
+const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
 
   if (!response.success){
@@ -30,7 +30,7 @@ const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:
 
 
 export default async function Page({ params }: Params) {
- const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
+ const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
 
  if (!response.success) {
