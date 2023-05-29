@@ -12,13 +12,9 @@ export const metadata:Metadata = {
 }
 
 
-const Help = () => {
+export default function Help() {
   return (
     <>
-      <Head>
-        <title>Help</title>
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
       <main
         className={` font-sans bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
       >
@@ -61,4 +57,3 @@ const Help = () => {
   );
 };
 
-export default Help;

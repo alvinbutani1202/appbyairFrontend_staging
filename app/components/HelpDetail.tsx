@@ -5,7 +5,7 @@ type Props = {
   sectionItems: HelpDetailKeyValuePair;
 };
 
-const HelpDetail:React.FC<Props> = ({ sectionItems, sectionTitle }: Props) => {
+export default function HelpDetail({ sectionItems, sectionTitle }: Props) {
   return (
     <div className="flex flex-col gap-2 px-4">
       <div className="pt-6 text-neutral-400 text-base">{sectionTitle}</div>
@@ -25,4 +25,4 @@ const HelpDetail:React.FC<Props> = ({ sectionItems, sectionTitle }: Props) => {
   );
 };
 
-export default HelpDetail;
+

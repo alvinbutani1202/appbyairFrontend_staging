@@ -5,7 +5,7 @@ type Props = {
   title: String;
 };
 
-const HeadTags:React.FC<Props> = ({ title }: Props) => {
+export default function HeadTags({ title }: Props) {
   return (
     <Head>
       <title>{`${title}`}</title>
@@ -20,4 +20,3 @@ const HeadTags:React.FC<Props> = ({ title }: Props) => {
   );
 };
 
-export default HeadTags;

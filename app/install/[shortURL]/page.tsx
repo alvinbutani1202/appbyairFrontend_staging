@@ -30,7 +30,7 @@ const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:
 }
 
 
-const Page = async ({ params }: Params)  => {
+export default async function Page({ params }: Params) {
  const response: BaseResponse<Application> = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
 
@@ -194,4 +194,4 @@ const Page = async ({ params }: Params)  => {
  
 };
 
-export default Page;
+// export default Page;

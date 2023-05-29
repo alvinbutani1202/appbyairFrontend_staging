@@ -8,7 +8,7 @@ type Props = {
   sectionItems: ApplicationDetailKeyValuePair[];
 };
 
-const SectionDetail:React.FC<Props> = ({ sectionItems, sectionTitle }: Props) => {
+export default function SectionDetail({ sectionItems, sectionTitle }: Props) {
   const [isShowQR, setIsShowQR] = useState(false);
   const [isShowDevices, setIsShowDevices] = useState(false);
 
@@ -244,5 +244,3 @@ const SectionDetail:React.FC<Props> = ({ sectionItems, sectionTitle }: Props) =>
     </div>
   );
 };
-
-export default SectionDetail;
