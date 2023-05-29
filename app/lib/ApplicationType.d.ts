@@ -1,7 +1,7 @@
-type BaseResponse<type> = {
+type BaseResponse<T> = {
   success: Boolean;
   message: String;
-  data: type;
+  data: T;
 };
 
 type Application = {
