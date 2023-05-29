@@ -33,30 +33,30 @@ export default async function Page({ params }: Params) {
  const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
 
- if (!response.success) {
-  console.log(response.message);
+//  if (!response.success) {
+//   console.log(response.message);
   
-    return (
-      <main
-        className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
-      >
-        <NavigationBar title={`${params.shortURL}`}></NavigationBar>
-        <HelpDetail
-          sectionTitle=""
-          sectionItems={{
-            key: "1",
-            value: `${response.message}`,
-          }}
-        />
-      </main>
-    );
-  }
+//     return (
+//       <main
+//         className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen `}
+//       >
+//         <NavigationBar title={`${params.shortURL}`}></NavigationBar>
+//         <HelpDetail
+//           sectionTitle=""
+//           sectionItems={{
+//             key: "1",
+//             value: `${response.message}`,
+//           }}
+//         />
+//       </main>
+//     );
+//   }
 
   return (
     <main
       className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
-      <div>{application.appInfo.name}</div>
+      <div>{response.data.appInfo.name}</div>
       {/* <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
       <SectionDetail
         sectionTitle="App Overview"
