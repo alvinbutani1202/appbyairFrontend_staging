@@ -56,7 +56,8 @@ export default async function Page({ params }: Params) {
     <main
       className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
-      <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
+      <div>{application.appInfo.name}</div>
+      {/* <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
       <SectionDetail
         sectionTitle="App Overview"
         sectionItems={[
@@ -184,7 +185,7 @@ export default async function Page({ params }: Params) {
             value: ``,
           },
         ]}
-      ></SectionDetail>
+      ></SectionDetail> */}
     </main>
   );
  
