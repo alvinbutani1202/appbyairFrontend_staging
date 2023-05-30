@@ -4,7 +4,10 @@ import appLogo from '../public/static/AppLogo.svg'
 
 export const metadata:Metadata = {
   title:"AppByAir",
-  description: ""
+  description: "",
+  icons:{
+      icon:"./favicon.ico",
+    }
 }
 
 

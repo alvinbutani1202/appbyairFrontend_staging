@@ -8,6 +8,9 @@ import { Metadata } from "next";
 
 export const metadata:Metadata = {
   title:"Help | AppByAir",
+  icons:{
+      icon:"./favicon.ico",
+    },
   description: ""
 }
 

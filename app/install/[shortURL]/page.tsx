@@ -20,6 +20,9 @@ const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/appl
   if (!response.success){
     return{
     title: `Application | AppByAir`,
+    icons:{
+      icon:"./favicon.ico",
+    }
   }
   }
 
