@@ -30,6 +30,8 @@ const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/appl
 
 
 export default async function ShortURL({ params }: Params) {
+  console.log(params.shortURL);
+  
  const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
 console.log(application);
