@@ -29,9 +29,10 @@ const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/appl
 }
 
 
-export default async function Page({ params }: Params) {
+export default async function ShortURL({ params }: Params) {
  const response: BaseResponse = await fetch(`http://143.244.136.168:4004/api/application/${params.shortURL}`).then(response => response.json())
  const application = response.data;
+console.log(application);
 
 //  if (!response.success) {
 //   console.log(response.message);
@@ -56,7 +57,7 @@ export default async function Page({ params }: Params) {
     <main
       className={` bg-neutral-100 dark:bg-black pb-8 min-h-screen`}
     >
-      <div>{response.data.appInfo.name}</div>
+      <div>AppByAir</div>
       {/* <NavigationBar title={`${application.appInfo.name}`}></NavigationBar>
       <SectionDetail
         sectionTitle="App Overview"
